@@ -1,0 +1,539 @@
+:root{
+    --Dark-Blue: hsl(233, 26%, 24%);
+    --Lime-Green: hsl(136, 65%, 51%);
+    --Bright-Cyan: hsl(192, 70%, 51%);
+
+    --Grayish-Blue: hsl(233, 8%, 62%);
+    --Light-Grayish-Blue: hsl(220, 16%, 96%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --White: hsl(0, 0%, 100%);
+
+    --btn-gradient: linear-gradient(to right, var(--Lime-Green), var(--Bright-Cyan));;
+    --btn-hover-state: linear-gradient(to right, hsla(136, 65%, 51%, 0.7), hsla(192, 70%, 51%, 0.7));
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Public Sans" sans-serif;
+    background-color: var(--Very-Light-Gray);
+    max-width: 1440px;
+    overflow-x: hidden;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+}
+
+/*---------------  HEADER -------------------------------*/
+
+header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--White);
+    padding: 0 130px;
+    z-index: 100;
+}
+nav ul{
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+nav ul li{
+    padding: 25px 0;
+    position: relative;
+}
+nav ul li a:hover::after{
+    content: '';
+    display: block;
+    background: var(--btn-gradient);
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -2px;
+    animation: hoverStateTransition 0.6s;   
+}
+@keyframes hoverStateTransition {
+    0%{opacity: 0;}
+    100%{ opacity: 1;}  
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--Grayish-Blue);
+    height: 100%;
+    transition: 0.6s ease-in-out; 
+}
+nav ul li a:hover{
+    color: var(--Dark-Blue); 
+     
+}
+button{
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    background: var(--btn-gradient);
+    color: var(--White);
+    font-weight: 700;
+    cursor: pointer;
+}
+button:hover{
+    background: var(--btn-hover-state);
+}
+.hamburgerMenu{
+    display: none;
+}
+
+/*------------------ HOME SECTION ------------------------------*/
+
+section{
+    width: 100%;
+    padding:  150px 130px;
+  
+}
+section:first-of-type{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    padding-left: 130px; 
+}
+section:nth-of-type(2){
+   padding-top: 80px;
+   padding-bottom: 80px;
+   background-color: var(--Light-Grayish-Blue);
+}
+section:last-of-type{
+    padding-top: 60px;
+   padding-bottom: 60px;
+   background-color: var(--Very-Light-Gray);
+}
+.homeTextDiv{
+    width: 400px;
+}
+.homeTextDiv h1{
+    font-size: 45px;
+    font-weight: 300;
+    color: var(--Dark-Blue);
+}
+.homeTextDiv p{
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--Grayish-Blue);
+}
+.homeTextDiv button{
+    margin-top: 20px;
+}
+.homeImgDiv{
+    position: relative;
+    top: 0;
+    background: url(images/bg-intro-desktop.svg) no-repeat;
+    background-size: 174%;
+    background-position-y: -265px;
+    background-position-x: -50px;
+    height:45vw;
+    max-height: 640px;
+    width: 730px;
+}
+.secondLayerImg{
+    position: absolute;
+    height: 145%;
+    top: -115px;
+    right: -18%;
+    max-height: 150vh;
+    z-index: 1;
+}
+.mobileBackgroundImg{
+    display: none;
+}
+
+/* ---------------- SECOND SECTION --------------------------*/
+
+.section2Header{
+    max-width: 600px;
+}
+.section2Header h2{
+    color: var(--Dark-Blue);
+    font-size: 30px;
+    font-weight: 400;
+}
+.section2Header p{
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--Grayish-Blue);
+}
+.financialPlansSection{
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.bankingType img{
+    height: 40px;
+    width: 40px;
+}
+.bankingType h3{
+    color: var(--Dark-Blue);
+    font-size: 25px;
+    font-weight: 300;
+    margin-top: 20px;
+}
+.bankingType p{
+    font-size: 18px;
+    color: var(--Grayish-Blue);
+    margin-top: 20px;
+}
+.articlesContainer{
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+.latestArticles h2{
+    color: var(--Dark-Blue);
+    font-size: 30px;
+    font-weight: 400;
+}
+.articlesContainer{
+    margin-top: 40px;
+}
+.article{
+    width:100%;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: var(--White);
+}
+.article img{
+    width: 100%;
+    height: 200px;
+}
+.articleDetails{
+    padding: 20px;
+    width: 100%;
+}
+.articleDetails span{
+    font-size: 12px;
+    color: var(--Grayish-Blue);
+    margin-top: 10px;
+    padding: 0;
+    margin: 0;
+}
+.articleDetails h4{
+    color: var(--Dark-Blue);
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.articleDetails h4:hover{
+    transition: 0.5s ease-in-out;
+    color: var(--Bright-Cyan);
+}
+.articleDetails p{
+    font-size: 15px;
+    color: var(--Grayish-Blue);
+    margin-top: 10px;
+}
+
+/* ---------------- FOOTER SECTION ------------------*/
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 130px;
+    background-color: var(--Dark-Blue);
+    color: var(--White);
+}
+.footerLogo{
+    background-color: var(--White);
+}
+.leftFooter{
+    display: flex;
+    gap: 70px;
+}
+.socialLinks{
+    display: flex;
+    gap: 10px;
+}
+.socialLinks a img:hover{
+   fill : var(--Lime-Green);
+}
+.footer1,
+.footer2,
+.footer3,
+.rightFooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.footer1{
+    gap: 60px;
+}
+.footer2,
+.footer3{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+footer a{
+    text-decoration: none;
+    color: var(--White);
+}
+footer a:hover{
+    color: var(--Lime-Green);
+}
+.rightFooter button{
+    width: fit-content;
+    margin-left: auto;
+}
+.attribution{
+    padding: 30px 15px;
+    font-size: 16px;
+    background-color: var(--Very-Light-Gray);
+    text-align: center;
+}
+
+/*---------------- MEDIA QUERIES ---------------------*/
+
+@media (max-width:1334px) {
+    .secondLayerImg{
+        top: -100px;
+    }
+}
+
+@media (max-width:1093px) {
+    header,
+    section,
+    footer{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    section:first-of-type{
+        padding-left: 50px;
+    }
+    .homeImgDiv{
+        background-size: 150%;
+        height: 50vw;
+        width: 730px;
+        background-size: 175%;
+        background-position-y: -245px;
+    }
+}
+
+@media (max-width:935px){
+    .article img{
+        height: 150px;
+    }
+}
+
+@media (max-width: 880px) {
+    .leftFooter{
+        gap: 70px;
+    }
+}
+
+@media (max-width:820px){
+    #headerBtn{
+        display: none;
+    }
+    .openMenu{
+        display: none;
+    }
+    .hamburgerMenu{
+        display: block;
+        height: 20px;
+        width: 20px;
+        background: url(images/icon-hamburger.svg)no-repeat center center;
+    }
+    .hamburgerMenu.active{
+        background: url(images/icon-close.svg)no-repeat center center;
+    }
+    header{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    nav{
+        display: none;
+    }
+    nav.active{
+        display: block;
+        background:linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)90%);
+        position: absolute;
+        top: 53px;
+        left: 50%;
+        transform: translateX(-50%); 
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+    }
+    nav ul{
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+        background-color: var(--White);
+    }
+    nav ul li{
+        padding: 0;
+    }
+    nav ul li:hover{
+        box-shadow: none;
+    }
+    nav ul li a {
+        font-size: 18px;
+        color: var(--Dark-Blue);
+        font-weight: 700;
+    }
+    nav ul li a:hover::after{
+        background: none;
+    }
+    section:first-of-type{
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .homeTextDiv{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 25px 50px;
+    }
+    .homeImgDiv{
+        width: 100%;
+        background: url(images/bg-intro-mobile.svg) no-repeat center center / contain;
+        background-size: cover;
+        height: 60vw; 
+        min-height: 273px;
+    }
+    .secondLayerImg{
+        transform: translateX(-50%);
+        top: -165px;
+        left: 50%;
+        max-height: 650px;   
+    }
+}
+
+@media (max-width:800px){
+    .section2Header,
+    .latestArticles h2{
+        width: 100%;
+        text-align: center;
+    }
+    .financialPlansSection,
+    .articlesContainer{
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+    .article img{
+        height: 200px;
+        width:100%;
+    }
+    .bankingType{
+        text-align: center;
+    }
+}
+
+@media (max-width: 780px) {
+    .leftFooter{
+        gap: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    footer,
+    .leftFooter{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: unset;
+    }
+    .footer1{
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .footer2,
+    .footer3{
+        gap: 15px;
+        font-size: 18px;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer3{
+        margin-top: 15px;
+    }
+    .rightFooter{
+        margin-top: 30px;
+        gap: 30px;
+        width: fit-content;
+        align-items: center;
+    }
+    .rightFooter button{
+         margin-left: unset;
+    }
+    .rightFooter p{
+        text-align: center;
+    }
+}
+
+@media (max-width: 620px) {
+    header,
+    section,
+    footer{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width:570px){
+    .secondLayerImg{
+        position: absolute;
+        width: 92%;
+        transform: translateX(-50%);
+        top: -130px;
+        left: 50%;
+        z-index: 5; 
+    }
+    .financialPlansSection,
+    .articlesContainer{
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    .article img{
+        height: 250px
+    } 
+}
+
+@media (max-width:375px){
+    .secondLayerImg{
+        position: absolute;
+        width: 92%;
+        height: 106vw;
+        transform: translateX(-50%);
+        top: -116px;
+        left: 50%;
+        z-index: 5; 
+    }
+    .article img{
+        height: 185px
+    } 
+    header,
+    section,
+    footer{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .homeTextDiv{
+        padding: 30px 15px;   
+    }
+}
+@media (max-width:315px){
+    .secondLayerImg{
+        top: -90px;
+    }
+}
